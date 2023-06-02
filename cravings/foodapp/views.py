@@ -5,6 +5,9 @@ from django.contrib import messages
 from .models import CustomUser, menu
 
 
+def place_order(request):
+    pass
+
 def profile(request):
     return render(request, "profile.html")
 
@@ -15,7 +18,7 @@ def menu(request):
     if request.method == "POST":
         items = request.POST.getlist("chk[]")
         print(items)
-    return render(request, "menu.html")
+    return render(request, "menu/menu.html")
 
 
 def login(request):
