@@ -2,14 +2,20 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import auth
 from django.contrib import messages
-from .models import CustomUser
+from .models import CustomUser, menu
 
-def index(request):
-    return render(request, "index.html")
+
+def profile(request):
+    return render(request, "profile.html")
+
+def mess(request):
+    return render(request, "ordertable.html")
+
+def menu(request):
+    return render(request, "menu.html")
 
 
 def login(request):
-
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
@@ -18,11 +24,11 @@ def login(request):
         if user is not None:
             auth.login(request, user)
             messages.info(request, f"Welcome, {user.username}")
-            print(user.type)
-            if user.type == "hospital":
-                return redirect("/userpage")
+            print (user.user_type)
+            if user.user_type == "S":
+                return redirect("/menu")
             else:
-                return redirect("/doctor")
+                return redirect("/mess")
             
         elif CustomUser.objects.filter(username = username).exists():
             messages.info(request, "Password does not match")
@@ -42,10 +48,14 @@ def signup(request):
         email = request.POST['email']
         number = request.POST['pno']
         regno = request.POST['regno']
-        hostel = render.POST["hostel"]
+        gender = request.POST['gender']
+        hostel = request.POST["hostel"]
         
         if CustomUser.objects.filter(username = username).exists():
             messages.info(request, "Username exists")
+            return redirect("/signup")
+        if CustomUser.objects.filter(regno = regno).exists():
+            messages.info(request, "Registration number exists")
             return redirect("/signup")
         elif CustomUser.objects.filter(email = email).exists():
             messages.info(request, "Email exists")
@@ -57,7 +67,10 @@ def signup(request):
             messages.info(request, "Passwords do not match")
             return redirect("/signup")
 
-        user = CustomUser(username = username, email = email, pno = number)
+        if gender == "Men's Hostel":
+            user = CustomUser(username = username, email = email, pno = number, regno = regno, gender = "M", block = "M" + hostel)
+        else:
+            user = CustomUser(username = username, email = email, pno = number, regno = regno, gender = "F", block = "G" + hostel)
         user.set_password(password)
         user.save()
         messages.info(request, "Signup successful")

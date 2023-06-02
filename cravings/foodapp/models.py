@@ -46,9 +46,10 @@ class CustomUser(AbstractUser):
         ("GH - H", "GH"),
     )
 
-    user_type = models.CharField(choices = user_type, max_length=9, default="M")
+    user_type = models.CharField(choices = user_type, max_length=9, default="S")
+    regno = models.CharField(max_length=9, default="00BBS0000")
     pno = models.CharField(max_length=10)
-    due = models.PositiveIntegerField()
+    due = models.PositiveIntegerField(default=0)
     gender = models.CharField(choices=gender, max_length=6, default="M")
     block = models.CharField(choices=blocks, max_length=12, default="MHA")
 
@@ -57,6 +58,11 @@ class menu(models.Model):
     block = models.CharField(choices=CustomUser.blocks, max_length=12, default="MHA")
     item = models.CharField(max_length=50)
     rate = models.PositiveIntegerField()
+
+    class Meta:
+        def __str__(self) -> str:
+            return 
+    
 
 class order(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)

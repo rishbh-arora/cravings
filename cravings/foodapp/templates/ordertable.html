@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>order table</title>
 
-    <link rel="stylesheet" href="tablepage.css">
+    <link rel="stylesheet" href="{% static 'tablepage.css' %}">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
@@ -37,15 +38,17 @@
     <div class="middle">    
 
         <div class="title">Orders</div>
-
+        <form>
         <table class="table table-hover">
             <thead class="thead-light">
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Items</th>
+                <th scope="col">Quantity</th>
                 <th scope="col">Rate</th>
-                <th scope="col">Price</th>
+                <th scope="col">Total</th>
+                <th scope="col">Grand Total</th>
               </tr>
             </thead>
             <tbody>
@@ -60,23 +63,11 @@
                     </ul>
                 </td>
                 <td>
-                    <ul>
-                        <li>100</li>
-                        <li>50</li>
-                        <li>20</li>
-                    </ul>
-                </td>
-                <td>170</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Mark</td>
-                <td>
-                    <ul>
-                        <li>Masala Dosa</li>
-                        <li>Vada</li>
-                        <li>Kitkat</li>
-                    </ul>
+                  <ul>
+                      <li>1</li>
+                      <li>2</li>
+                      <li>1</li>
+                  </ul>
                 </td>
                 <td>
                     <ul>
@@ -85,29 +76,21 @@
                         <li>20</li>
                     </ul>
                 </td>
-                <td>170</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Mark</td>
                 <td>
-                    <ul>
-                        <li>Masala Dosa</li>
-                        <li>Vada</li>
-                        <li>Kitkat</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>100</li>
-                        <li>50</li>
-                        <li>20</li>
-                    </ul>
+                  <ul>
+                      <li>100</li>
+                      <li>50</li>
+                      <li>20</li>
+                  </ul>
                 </td>
                 <td>170</td>
+                <td>
+                  <input type="submit" value="Ready">
+                </td>
               </tr>
             </tbody>
           </table>
+        </form>
     </div>
           <div class="right"></div>
     </div>

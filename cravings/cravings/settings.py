@@ -58,7 +58,7 @@ ROOT_URLCONF = "cravings.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": ["/home/rishbh/Desktop/Code/repos/cravings/cravings/cravings/templates"],
+        "DIRS": ["/home/rishbh/Desktop/Code/repos/cravings/cravings/foodapp/templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
