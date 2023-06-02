@@ -2,7 +2,10 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import auth
 from django.contrib import messages
-from .models import CustomUser, menu
+from .models import CustomUser, menu, order
+
+def messsignup(request):
+    return render(request, "messsignup.html")
 
 def profile(request):
     return render(request, "profile.html")
@@ -10,11 +13,31 @@ def profile(request):
 def mess(request):
     return render(request, "ordertable.html")
 
-def menu(request):
+def showmenu(request):
     if request.method == "POST":
         items = request.POST.getlist("chk[]")
+        quantity = []
+        for i in items:
+            quantity.append(request.POST[i])
+        print (quantity)
+
+        last_token = order.objects.latest("token_no")
+        print(last_token)
+        for i in items:
+            item = menu.objects.get(id = int(i))
+            print(item)
+            o = order(user = request.user, token_no = last_token , quantity = quantity[i], menu = item, total =  quantity[i]*item.rate)
+            o.save()
+        return redirect("/")
+
+    else:
+        print(request.user.block)
+        items = menu.objects.filter(block = request.user.block)
         print(items)
-    return render(request, "menu/menu.html")
+        d = {"items": items}
+
+        return render(request, "menu/menu.html", context=d)
+
 
 
 def login(request):
@@ -44,6 +67,7 @@ def login(request):
     
 def signup(request):
     if request.method == "POST":
+        name = request.POST["fname"]
         username = request.POST['username']
         password = request.POST['password']
         repass = request.POST['repass']
@@ -69,7 +93,7 @@ def signup(request):
             messages.info(request, "Passwords do not match")
             return redirect("/signup")
 
-        if gender == "Men's Hostel":
+        if gender == "1":
             user = CustomUser(username = username, email = email, pno = number, regno = regno, gender = "M", block = "M" + hostel)
         else:
             user = CustomUser(username = username, email = email, pno = number, regno = regno, gender = "F", block = "G" + hostel)
