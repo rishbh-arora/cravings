@@ -1,0 +1,2 @@
+#00aff5 - light blue
+f0fbff - blue-white
