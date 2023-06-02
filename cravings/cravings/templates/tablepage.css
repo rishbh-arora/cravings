@@ -5,11 +5,20 @@
 }
 
 .left{
-    background-color: #00aff5;
+    background-color: #ccc;
 }
 
 .right{
-    background-color: #00aff5;    
+    background-color: #ccc;    
+}
+
+.middle{
+    padding: 50px;
+}
+
+.title{
+    font-size: large;
+    font-weight: 400;
 }
 
 .table{
@@ -19,4 +28,14 @@
 
 ul{
     list-style: none;
+}
+
+.navbar{
+    position: sticky;
+    left: 0;
+    top: 0;
+}
+
+thead{
+    background-color: #00aff5;
 }
