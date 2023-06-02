@@ -19,6 +19,7 @@ body{
 }
 
 .container .title{
+    text-align: center;
     font-size: 25px;
     font-weight: 700;
     color: #fff;
@@ -160,4 +161,8 @@ form .button input:hover{
     position: relative;
     text-align: center;
     font-size: 1.25rem;
+}
+
+#login-box{
+    max-width: 480px;
 }
