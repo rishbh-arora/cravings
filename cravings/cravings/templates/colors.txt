@@ -1,4 +1,4 @@
 #00aff5 - light blue
 f0fbff - blue-white
 
-<section class="h-100 h-custom">
+background-image: url("../../static/images/398dcf8341363bee65705747a85403c5.jpg");
