@@ -46,3 +46,7 @@ ul{
 thead{
     background-color: #00aff5;
 }
+
+.nav-item{
+    padding: 0 10px 0 10px;
+}

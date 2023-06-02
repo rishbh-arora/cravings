@@ -5,14 +5,22 @@
 }
 
 .left{
-    background-color: #ccc;
+    margin-right: 10px;
+    /* box-shadow: 2px 2px 2px; */
+    background-color: #dddddd;
 }
 
 .right{
-    background-color: #ccc;    
+    margin-left: 10px;
+    /* box-shadow: 2px 2px 2px; */
+    background-color: #dddddd;  
+
 }
 
 .middle{
+    /* border-left: 2px solid black;
+    border-right: 2px solid black; */
+    margin: 0 20px 0 20px;
     padding: 50px;
 }
 
@@ -28,14 +36,17 @@
 
 ul{
     list-style: none;
+    padding-left: 0;
 }
 
 .navbar{
-    position: sticky;
-    left: 0;
-    top: 0;
+    box-shadow: 10px;   
 }
 
 thead{
     background-color: #00aff5;
+}
+
+.nav-item{
+    padding: 0 10px 0 10px;
 }
