@@ -1,0 +1,59 @@
+
+.heading1{
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Montserrat', 'sans-serif';
+    margin: 2%;
+}
+.heading2{
+    font-size: 3rem;
+    font-family: 'Montserrat', 'sans-serif';
+    margin: 2%;
+}
+.card{
+ margin: 5px;
+}
+
+.dropdown{
+    margin:6px;
+    margin-top:10px;
+}
+.row-incenter{
+    justify-content: center;
+}
+.menButton{
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+.menu-button{
+    background-color: #00AFF5; 
+    color:white;
+    border-width:0px; 
+    display: inline-block;
+    size: 5px;
+    border-radius: 25px;
+    width: 250px;
+    height: 46px;
+    margin: 5%;
+    margin-right: 0;
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: x-large;
+    color: white;
+}
+.mess-menu-button{
+    background-color: #00AFF5; 
+    color:white;
+    border-width:0px;
+    border-radius: 50px;
+    width: 47px;
+    height: inherit;
+    font-size:xx-large;
+    margin-top: 2px;
+
+}
+
+  /*-----------------------------------------Menu-Page-----------------------------------------*/
+  .price{
+    color:grey;
+  }

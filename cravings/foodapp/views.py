@@ -15,7 +15,7 @@ def menu(request):
     if request.method == "POST":
         items = request.POST.getlist("chk[]")
         print(items)
-    return render(request, "menu.html")
+    return render(request, "menu/menu.html")
 
 
 def login(request):
