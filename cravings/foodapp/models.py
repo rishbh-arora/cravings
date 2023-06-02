@@ -4,48 +4,50 @@ from django.contrib.auth.models import AbstractUser
 class CustomUser(AbstractUser):
 
     gender = (
-        ("Male", "M")
-        ("Female", "F")
+        ("Male", "M"),
+        ("Female", "F"),
     )
 
     user_type = (
-        ("Student", "S")
-        ("Mess", "M")
+        ("Student", "S"),
+        ("Mess", "M"),
     )
 
     blocks = (
-        ("A", "A")
-        ("B-annex", "B-annex")
-        ("B", "B")
-        ("C", "C")
-        ("D", "D")
-        ("D-annex", "D-annex")
-        ("E", "E")
-        ("F", "F")
-        ("G", "G")
-        ("H", "H")
-        ("J", "J")
-        ("K", "K")
-        ("L", "L")
-        ("M", "M")
-        ("MH - M-annex", "M-annex")
-        ("N", "N")
-        ("P", "P")
-        ("Q", "Q")
-        ("R", "R")
-        ("GH - A", "GHA")
-        ("GH - B", "GHB")
-        ("GH - C", "GHC")
-        ("GH - D", "GHD")
-        ("GH - D-annex", "GHDA")
-        ("GH - E", "GHE")
-        ("GH - F", "GHF")
-        ("GH - G", "GHG")
-        ("GH - H", "GHH")
+        ("MH - A", "MA"),
+        ("MH - B-annex", "MBA"),
+        ("MH - B", "MB"),
+        ("MH - C", "MC"),
+        ("MH - D", "MD"),
+        ("MH - D-annex", "MD"),
+        ("MH - E", "ME"),
+        ("MH - F", "MF"),
+        ("MH - G", "MG"),
+        ("MH - H", "MH"),
+        ("MH - J", "MJ"),
+        ("MH - K", "MK"),
+        ("MH - L", "ML"),
+        ("MH - M", "MM"),
+        ("MH - M-annex", "MMA"),
+        ("MH - N", "MN"),
+        ("MH - P", "MP"),
+        ("MH - Q", "MQ"),
+        ("MH - R", "MR"),
+        ("GH - A", "GA"),
+        ("GH - B", "GB"),
+        ("GH - C", "GC"),
+        ("GH - D", "GD"),
+        ("GH - D-annex", "GDA"),
+        ("GH - E", "GE"),
+        ("GH - F", "GF"),
+        ("GH - G", "GG"),
+        ("GH - H", "GH"),
     )
 
     user_type = models.CharField(choices = user_type, max_length=9, default="M")
     pno = models.CharField(max_length=10)
-    due = models.IntegerField(default=0)
-    gender = models.CharField(choices=gender, max_length=5, default="M")
+    due = models.PositiveIntegerField()
+    gender = models.CharField(choices=gender, max_length=6, default="M")
     block = models.CharField(choices=blocks, max_length=12, default="MHA")
+
+    
