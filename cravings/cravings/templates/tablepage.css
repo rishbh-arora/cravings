@@ -1,0 +1,22 @@
+.table-page{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+.left{
+    background-color: #00aff5;
+}
+
+.right{
+    background-color: #00aff5;    
+}
+
+.table{
+    margin-top: 50px;
+    margin-right: 100px;
+}
+
+ul{
+    list-style: none;
+}
