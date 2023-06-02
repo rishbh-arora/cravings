@@ -8,5 +8,4 @@ urlpatterns = [
     path("profile", views.profile),
     path("mess", views.mess),
     path("menu", views.menu),
-    path("place_order", views.place_order)
 ]
