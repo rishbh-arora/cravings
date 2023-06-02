@@ -2,3 +2,5 @@
 f0fbff - blue-white
 
 background-image: url("../../static/images/398dcf8341363bee65705747a85403c5.jpg");
+
+mt-5 mb-5
