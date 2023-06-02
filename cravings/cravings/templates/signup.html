@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signup</title>
 
-    { % load static %}
+    <!-- { % load static %} -->
     <link rel="stylesheet" href="{ % static 'signup.css' %}">
     <link rel="stylesheet" href="signup.css">
 
@@ -15,39 +15,35 @@
 
 </head>
 <body>
-    <div class="container">
-        <div class="title">Registration</div>
-            <form action="javascript:void(0);">
-                <div class="user-details">
-                    <div class="input-box">
-                        <span class="details">Name</span>
-                        <input type="text" name="fname">
+        <div class="container">
+            <div class="title">Registration</div>
+                <form action="javascript:void(0);">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details"></span>
+                            <input type="text" name="fname" placeholder="Name">
+                        </div>
+                        <div class="input-box">
+                            <input type="text" name="fname" placeholder="Registration Number">
+                        </div>
+                        <div class="input-box">
+                            <input type="text" name="fname" placeholder="Username">
+                        </div>
+                        <div class="input-box">
+                        <input type="tel" name="contact" placeholder="Contact no">
+                        </div>
+                        <div class="input-box">
+                        <input type="email" name="email" placeholder="Email id">
+                        </div>        
+                        <div class="input-box">
+                        <input type="password" name="pwd" placeholder="Password">
+                        </div>       
+                    </div> 
+                    <div class="button">
+                        <input type="submit" value="Register">
                     </div>
-                    <div class="input-box">
-                        <span class="details">Registration Number</span>
-                        <input type="text" name="fname">
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Username</span>
-                        <input type="text" name="fname">
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Contact no</span>
-                    <input type="tel" name="contact">
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Email id</span>
-                    <input type="email" name="email">
-                    </div>        
-                    <div class="input-box">
-                        <span class="details">Password</span>
-                    <input type="password" name="pwd">
-                    </div>       
-                </div> 
-                <div class="button">
-                    <input type="submit" value="Register">
-                </div>      
-            </form>
-        </div>                
+                    <div class="login-signup">Already have an account? <a href="login.html" id="signup">Login</a></div>     
+                </form>
+            </div>                
 </body>
 </html>
