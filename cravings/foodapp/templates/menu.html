@@ -12,19 +12,21 @@
     </style>
 </head>
 <body>
-    <form>
+    <form method="POST" action="/menu">
+        {% csrf_token %}
         <div style="display: flex">
             <h4>Paneer parantha</h1> 
             <h3>rate: 30</h3>
             <input type="number" min=0>
-            <input type="checkbox">
+            <input type="checkbox" name="chk[]" value=1>
         </div>
         <div style="display: flex">
             <h4>Aloo parantha</h1> 
             <h3>rate: 25</h3>
             <input type="number" min=0>
-            <input type="checkbox">
-        </div>
-    </div>
+            <input type="checkbox" name="chk[]" value=2>
+        </div>'
+        <input type="submit" value="add to cart">
+    </form>
 </body>
 </html>

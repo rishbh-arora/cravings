@@ -12,6 +12,9 @@ def mess(request):
     return render(request, "ordertable.html")
 
 def menu(request):
+    if request.method == "POST":
+        items = request.POST.getlist("chk[]")
+        print(items)
     return render(request, "menu.html")
 
 
