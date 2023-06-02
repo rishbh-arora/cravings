@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
+import datetime
+
 class CustomUser(AbstractUser):
 
     gender = (
@@ -50,4 +52,23 @@ class CustomUser(AbstractUser):
     gender = models.CharField(choices=gender, max_length=6, default="M")
     block = models.CharField(choices=blocks, max_length=12, default="MHA")
 
-    
+
+class menu(models.Model):
+    block = models.CharField(choices=CustomUser.blocks, max_length=12, default="MHA")
+    item = models.CharField(max_length=50)
+    rate = models.PositiveIntegerField()
+
+class order(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    token_no= models.PositiveIntegerField()
+    quantity = models.PositiveIntegerField()
+    item = models.ForeignKey(menu, on_delete=models.CASCADE)
+    book_time = models.DateTimeField(default = datetime.datetime.now())
+    exp_time = models.DateTimeField(default = datetime.datetime.now() + datetime.timedelta(minutes=25))
+    total = models.FloatField()
+
+class cart(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField()
+    item = models.ForeignKey(menu, on_delete=models.CASCADE)
+    total = models.FloatField()
