@@ -4,10 +4,6 @@ from django.contrib.auth.models import auth
 from django.contrib import messages
 from .models import CustomUser, menu
 
-
-def place_order(request):
-    pass
-
 def profile(request):
     return render(request, "profile.html")
 
