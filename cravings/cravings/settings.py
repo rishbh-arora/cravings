@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     "foodapp",
 ]
 
+AUTH_USER_MODEL = "foodapp.CustomUser"
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
