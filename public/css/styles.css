@@ -5,6 +5,11 @@
     font-family: 'Montserrat', 'sans-serif';
     margin: 2%;
 }
+.heading2{
+    font-size: 3rem;
+    font-family: 'Montserrat', 'sans-serif';
+    margin: 2%;
+}
 .card{
  margin: 5px;
 }
@@ -15,4 +20,22 @@
 }
 .row-incenter{
     justify-content: center;
+}
+.menButton{
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+.menu-button{
+    
+    background-color: #00AFF5; 
+    color:white; border-width:0px; 
+    display: inline-block;
+    size: 5px;
+    border-radius: 25px;
+    width: 250px;
+    height: 46px;
+    margin: 5%;
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: x-large;
 }
