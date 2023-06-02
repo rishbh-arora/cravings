@@ -17,18 +17,18 @@
 <body>
     <div class="container" id="login-box">
         <div class="title">Login</div>
-            <form action="javascript:void(0);">
-                <div class="user-details">
-                    <div class="input-box">
+            <form id="login-form" action="javascript:void(0);">
+                <div class="user-details" id="login-details">
+                    <div class="input-box" id="login-input-box">
                         <input type="text" name="fname" placeholder="Username">
                     </div>      
-                    <div class="input-box">
+                    <div class="input-box" id="login-input-box">
                     <input type="password" name="pwd" placeholder="Password">
                     </div>       
+                    <div class="button">
+                        <input type="submit" value="Login">
+                    </div>
                 </div> 
-                <div class="button">
-                    <input type="submit" value="Login">
-                </div>
                 <div class="login-signup">Don't have an account? <a href="signup.html" id="signup">Sign up</a></div>     
             </form>
         </div>   
