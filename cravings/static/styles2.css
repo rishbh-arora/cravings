@@ -1,118 +1,118 @@
 body{
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 .heading1{
-    text-align: center;
-    font-size: 3rem;
-    font-family: 'Montserrat', 'sans-serif';
-    margin: 2%;
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Montserrat', 'sans-serif';
+  margin: 2%;
 }
 .heading2{
-    font-size: 3rem;
-    font-family: 'Montserrat', 'sans-serif';
-    margin: 2%;
+  font-size: 3rem;
+  font-family: 'Montserrat', 'sans-serif';
+  margin: 2%;
 }
 .heading3{
-    font-family: 'Montserrat', 'sans-serif';
-    text-align: center;
+  font-family: 'Montserrat', 'sans-serif';
+  text-align: center;
 }
 .card{
- margin: 5px;
- box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+margin: 5px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .card:hover{
-    position: relative; 
-    top: -10px;
+  position: relative; 
+  top: -10px;
 
-    transition: 1s;
-  }
+  transition: 1s;
+}
 .line{
-    height: 50px;
+  height: 50px;
 }
 
 .dropdown{
-    margin:6px;
-    margin-top:10px;
+  margin:6px;
+  margin-top:10px;
 }
 .row-incenter{
-    justify-content: center;
+  justify-content: center;
 }
 .menButton{
-    display: block;
-    align-items: center;
-    justify-content: center;
+  display: block;
+  align-items: center;
+  justify-content: center;
 }
 .menu-button{ 
-    color:white;
-    border-width:0px; 
-    display: inline-block;
-    size: 5px;
-    border-radius: 25px;
-    width: 250px;
-    height: 52px;
-    margin: 5%;
-    margin-right: 0;
-    font-family: 'Montserrat', 'sans-serif';
-    font-size: x-large;
-    color: white;
+  color:white;
+  border-width:0px; 
+  display: inline-block;
+  size: 5px;
+  border-radius: 25px;
+  width: 250px;
+  height: 52px;
+  margin: 5%;
+  margin-right: 0;
+  font-family: 'Montserrat', 'sans-serif';
+  font-size: x-large;
+  color: white;
 }
 .mess-menu-but{
-    background-color: #00AFF5; 
-    color:white;
-    border-width:0px;
-    border-radius: 50px;
-    width: 47px;
-    height: inherit;
-    font-size:xx-large;
-    margin-top: 2px;
+  background-color: #00AFF5; 
+  color:white;
+  border-width:0px;
+  border-radius: 50px;
+  width: 47px;
+  height: inherit;
+  font-size:xx-large;
+  margin-top: 2px;
 }
 /* .mesmenu{
-    justify-content: space-around;
+  justify-content: space-around;
 } */
 .para{
-    margin-left:10px;
+  margin-left:10px;
 }
 
 .img-fluid{
-    width:200px;
+  width:200px;
 }
 
-  
-  
 
-  /*-----------------------------------------Menu-Page-----------------------------------------*/
-  .price{
-    color:grey;
-  }
-  .dropbtn{
-    background-color: aqua;
-    color: #00AFF5;
-  }
-  .heading3{
-    font-size: 3rem;
-    font-family: 'Montserrat', 'sans-serif';
-    margin-left:2%;
-  }
-  .this-heading{
-    margin-bottom:0;
-  }
+
+
+/*-----------------------------------------Menu-Page-----------------------------------------*/
+.price{
+  color:grey;
+}
+.dropbtn{
+  background-color: aqua;
+  color: #00AFF5;
+}
+.heading3{
+  font-size: 3rem;
+  font-family: 'Montserrat', 'sans-serif';
+  margin-left:2%;
+}
+.this-heading{
+  margin-bottom:0;
+}
 
 
 /*---------------------------------------about-page--------------------------------------------*/
 
-  .about-box{
-    text-align: center;
-    border : 0px solid black;
-    background-color: white;
-    border-radius:50px;
-    height:350px;
-    margin: 0 auto;
-    padding: 10px;
-    width: 500px;
-    padding-top:50px;
-    margin-bottom:0px;
-  }
-  .team-card{
-    border-radius: 20px;
-  }
+.about-box{
+  text-align: center;
+  border : 0px solid black;
+  background-color: white;
+  border-radius:50px;
+  height:350px;
+  margin: 0 auto;
+  padding: 10px;
+  width: 500px;
+  padding-top:50px;
+  margin-bottom:0px;
+}
+.team-card{
+  border-radius: 20px;
+}
