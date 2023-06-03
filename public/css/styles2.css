@@ -13,8 +13,22 @@ body{
     font-family: 'Montserrat', 'sans-serif';
     margin: 2%;
 }
+.heading3{
+    font-family: 'Montserrat', 'sans-serif';
+    text-align: center;
+}
 .card{
  margin: 5px;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card:hover{
+    position: relative; 
+    top: -10px;
+
+    transition: 1s;
+  }
+.line{
+    height: 50px;
 }
 
 .dropdown{
@@ -29,8 +43,7 @@ body{
     align-items: center;
     justify-content: center;
 }
-.menu-button{
-    background-color: #00AFF5; 
+.menu-button{ 
     color:white;
     border-width:0px; 
     display: inline-block;
@@ -83,4 +96,23 @@ body{
   }
   .this-heading{
     margin-bottom:0;
+  }
+
+
+/*---------------------------------------about-page--------------------------------------------*/
+
+  .about-box{
+    text-align: center;
+    border : 0px solid black;
+    background-color: white;
+    border-radius:50px;
+    height:350px;
+    margin: 0 auto;
+    padding: 10px;
+    width: 500px;
+    padding-top:50px;
+    margin-bottom:0px;
+  }
+  .team-card{
+    border-radius: 20px;
   }
