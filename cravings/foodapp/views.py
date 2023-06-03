@@ -60,9 +60,9 @@ def showmenu(request):
 
     else:
         print(request.user.block)
-        items = menu.objects.filter(block = request.user.block)
-        print(items)
-        return render(request, "menu/menu.html", {"items": items})
+        veg = menu.objects.filter(block = request.user.block, cat = "Veg")
+        nonveg = menu.objects.filter(block = request.user.block, cat = "Non veg")
+        return render(request, "menu/menu.html", {"veg": veg, "nonveg": nonveg})
 
 
 
