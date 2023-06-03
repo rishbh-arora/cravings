@@ -69,7 +69,14 @@ def login(request):
             return redirect("/login")
 
     else:
-        return render(request, "login.html")
+        if request.user.is_authenticated:
+            if request.user.user_type == "S":
+                return redirect("/menu")
+            else:
+                return redirect("/mess")
+        else:
+            return render(request, "login.html")
+        
     
 def signup(request):
     if request.method == "POST":
@@ -100,13 +107,49 @@ def signup(request):
             return redirect("/signup")
 
         if gender == "1":
-            user = CustomUser(username = username, email = email, pno = number, regno = regno, gender = "M", block = "M" + hostel)
+            user = CustomUser(first_name = name, username = username, email = email, pno = number, regno = regno, gender = "M", block = "M" + hostel, user_type = "S")
         else:
-            user = CustomUser(username = username, email = email, pno = number, regno = regno, gender = "F", block = "G" + hostel)
+            user = CustomUser(first_name = name, username = username, email = email, pno = number, regno = regno, gender = "F", block = "G" + hostel, user_type = "S")
         user.set_password(password)
         user.save()
         messages.info(request, "Signup successful")
         return redirect("/login")
     else:
         return render(request, "signup.html")
+    
+
+def messsignup(request):
+    if request.method == "POST":
+        name = request.POST["fname"]
+        username = request.POST['username']
+        password = request.POST['password']
+        repass = request.POST['repass']
+        email = request.POST['email']
+        number = request.POST['pno']
+        gender = request.POST['gender']
+        hostel = request.POST["hostel"]
+        
+        if CustomUser.objects.filter(username = username).exists():
+            messages.info(request, "Username exists")
+            return redirect("/signup")
+        elif CustomUser.objects.filter(email = email).exists():
+            messages.info(request, "Email exists")
+            return redirect("/signup")
+        elif CustomUser.objects.filter(pno = number).exists():
+            messages.info(request, "Phone number already registered")
+            return redirect("/signup")
+        elif password != repass:
+            messages.info(request, "Passwords do not match")
+            return redirect("/signup")
+
+        if gender == "1":
+            user = CustomUser(first_name = name, username = username, email = email, pno = number, gender = "M", block = "M" + hostel, user_type = "M")
+        else:
+            user = CustomUser(first_name = name, username = username, email = email, pno = number, gender = "F", block = "G" + hostel, user_type = "M")
+        user.set_password(password)
+        user.save()
+        messages.info(request, "Signup successful")
+        return redirect("/login")
+    else:
+        return render(request, "messsignup.html")
     

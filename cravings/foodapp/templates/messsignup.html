@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signup</title>
 
-    { % load static %}
-    <link rel="stylesheet" href="{ % static 'signup.css' %}">
-    <link rel="stylesheet" href="signup.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
+    <!-- <link rel="stylesheet" href="signup.css"> -->
 
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
     <!-- <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>  -->
@@ -17,30 +17,31 @@
 <body>
         <div class="container">
             <div class="title">Mess registration</div>
-                <form action="javascript:void(0);">
+                <form action="/messsignup" method="post">
+                    {% csrf_token %}
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details"></span>
                             <input type="text" name="fname" placeholder="Mess name">
                         </div>
                         <div class="input-box">
-                            <input type="text" name="fname" placeholder="Username">
+                            <input type="text" name="username" placeholder="Username">
                         </div>
                         <div class="input-box">
-                        <input type="tel" name="contact" placeholder="Contact no">
+                        <input type="tel" name="pno" placeholder="Contact no">
                         </div>
                         <div class="input-box">
                         <input type="email" name="email" placeholder="Email id">
                         </div>        
                         <div class="input-box">
-                        <input type="password" name="pwd" placeholder="Password">
+                        <input type="password" name="password" placeholder="Password">
                         </div> 
                         <div class="input-box">
-                        <input type="password" name="conpwd" placeholder="Confirm password">
+                        <input type="password" name="repass" placeholder="Confirm password">
                         </div> 
 
                         <div class="input-box">
-                            <select class="hostel-select" aria-label="Default select example">
+                            <select class="hostel-select" aria-label="Default select example" name="gender">
                                 <option selected>Hostel type</option>
                                 <option value="1">Men's Hostel</option>
                                 <option value="2">Ladies' Hostel</option>
@@ -49,24 +50,24 @@
                         </div>
 
                         <div class="input-box">
-                          <select class="block-select" aria-label="Default select example">
+                          <select class="block-select" aria-label="Default select example" name="hostel">
                               <option selected>Block</option>
-                              <option value="1">A</option>
-                              <option value="2">B</option>
-                              <option value="2">C</option>
-                              <option value="2">D</option>
-                              <option value="2">E</option>
-                              <option value="2">F</option>
-                              <option value="2">G</option>
-                              <option value="2">H</option>
-                              <option value="2">J</option>
-                              <option value="2">K</option>
-                              <option value="2">L</option>
-                              <option value="2">M</option>
-                              <option value="2">N</option>
-                              <option value="2">P</option>
-                              <option value="2">Q</option>
-                              <option value="2">R</option>
+                              <option value="A">A</option>
+                              <option value="B">B</option>
+                              <option value="C">C</option>
+                              <option value="D">D</option>
+                              <option value="E">E</option>
+                              <option value="F">F</option>
+                              <option value="G">G</option>
+                              <option value="H">H</option>
+                              <option value="J">J</option>
+                              <option value="K">K</option>
+                              <option value="L">L</option>
+                              <option value="M">M</option>
+                              <option value="N">N</option>
+                              <option value="P">P</option>
+                              <option value="Q">Q</option>
+                              <option value="R">R</option>
                           </select>                              
                       </div> 
                          
@@ -75,7 +76,7 @@
                     <div class="button">
                         <input type="submit" value="Register">
                     </div>
-                    <div class="login-signup">Already have an account? <a href="login.html" id="signup">Login</a></div>     
+                    <div class="login-signup">Already have an account? <a href="/login" id="signup">Login</a></div>     
                 </form>
             </div>                
 </body>

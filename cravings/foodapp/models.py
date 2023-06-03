@@ -16,6 +16,7 @@ class CustomUser(AbstractUser):
     )
 
     blocks = (
+        ("Base", "Base"),
         ("MA", "MA"),
         ("MB", "MB"),
         ("MBA", "MBA"),
@@ -63,7 +64,7 @@ class menu(models.Model):
     
 
 class order(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True)
     token_no= models.PositiveIntegerField()
     quantity = models.PositiveIntegerField()
     item = models.ForeignKey(menu, on_delete=models.CASCADE)
