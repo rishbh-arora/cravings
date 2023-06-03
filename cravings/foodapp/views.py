@@ -13,6 +13,10 @@ def profile(request):
 def mess(request):
     return render(request, "ordertable.html")
 
+def logout(request):
+    auth.logout(request)
+    return redirect("/login")
+
 def showmenu(request):
     if request.method == "POST":
         items = request.POST.getlist("chk[]")
@@ -34,9 +38,7 @@ def showmenu(request):
         print(request.user.block)
         items = menu.objects.filter(block = request.user.block)
         print(items)
-        d = {"items": items}
-
-        return render(request, "menu/menu.html", context=d)
+        return render(request, "menu/menu.html", {"items": items})
 
 
 
