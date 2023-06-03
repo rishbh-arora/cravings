@@ -1,0 +1,114 @@
+
+.heading1{
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Montserrat', 'sans-serif';
+    margin: 2%;
+    
+}
+
+.heading2{
+    font-size: 3rem;
+    font-family: 'Montserrat', 'sans-serif';
+    margin: 2%;
+}
+.card{
+ margin: 5px;
+}
+
+.dropdown{
+    margin:6px;
+    margin-top:10px;
+}
+.row-incenter{
+    justify-content: center;
+}
+.menButton{
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+.menu-button{
+    background-color: #00AFF5; 
+    color:white;
+    border-width:0px; 
+    display: inline-block;
+    size: 5px;
+    border-radius: 25px;
+    width: 250px;
+    height: 52px;
+    margin: 0;
+    margin-right: 0;
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: x-large;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.mess-menu-but{
+    background-color: #00AFF5; 
+    color:white;
+    border-width:0px;
+    border-radius: 50px;
+    width: 47px;
+    height: inherit;
+    font-size:xx-large;
+    margin-top: 2px;
+}
+/* .mesmenu{
+    justify-content: space-around;
+} */
+.para{
+    margin-left:10px;
+}
+
+
+/*-------------cards-----------------*/
+.row{
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .card {
+    /*float: left;*/
+    max-width: 33.333%;
+    padding: .75rem;
+    margin-bottom: 2rem;
+    border: 0;
+    flex-basis: 33.333%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    
+  }
+  .card:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .card > img {
+    margin-bottom: .75rem;
+    width: 100%;
+  }
+  
+  .card-text {
+    font-size: 85%;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+}
+.card-text{
+    text-align: left;
+}
+.card-body{
+    text-align: center;
+}
+.card-img-top{
+    border-radius: 15px;
+}
+  
+
+  /*-----------------------------------------Menu-Page-----------------------------------------*/
+  .price{
+    color:grey;
+  }

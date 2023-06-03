@@ -1,0 +1,14 @@
+<%-include('header')-%>
+
+<h1 class="heading2">Your Profile</h1>
+<p class="para">user name </p>
+<p class="para">user phn no. </p>
+<p class="para">user mail </p>
+<p class="para">user roll no. </p>
+<p class="para">and other user details</p>
+
+<button class="menu-button" style="align-items: center; width:250px">
+    <a style="color:white; text-decoration:none;" href="#">Sign Out</a>
+</button>
+
+
