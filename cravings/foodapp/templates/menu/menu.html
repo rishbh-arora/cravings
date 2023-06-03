@@ -141,8 +141,11 @@
             </li>
         </ul>
     </div>
+    <form method="post" action="/menu">
 
-    <div class="row">
+        {% csrf_token %}
+        
+        <div class="row">
 
         {% for item in veg %}
         <div class="container d-flex mt-4 p-4  col-5" id="burger"

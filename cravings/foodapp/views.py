@@ -19,17 +19,18 @@ def invoice(request):
     return render(request, "invoice.html")
 
 def mess(request):
-    print(request.user.block)
-    nos = list(set(order.objects.filter(valid = True, block = request.user.block).values_list("token_no").distinct()))
-    tokens = []
-    for i in nos:
-        tokens.append(i[0])
-    print(tokens)
-    users = order.objects.filter(valid = True, block = request.user.block).values_list("user").distinct()
-    orders = order.objects.filter(valid = True, block = request.user.block)
-
-    return render(request, "ordertable.html")
-
+    if request.method == "POST":
+        token = request.POST['token1']
+        orders = order.objects.filter(token_no = token)
+        for i in orders:
+            i.valid = False
+            i.save()
+        return redirect("/mess")
+    
+    else:
+        orders = order.objects.filter(block = request.user.block, valid = True)
+        return render(request, "ordertable.html", context={"orders": orders})
+    
 def logout(request):
     auth.logout(request)
     return redirect("/login")
@@ -45,7 +46,7 @@ def showmenu(request):
         cur_token = order.objects.latest("token_no").token_no + 1
 
         for i in range(len(quantity)):
-            if quantity[i] != 0:
+            if quantity[i] != "0":
                 o = order(user = request.user, token_no = cur_token , quantity = quantity[i], item = items[i], total =  int(quantity[i])*items[i].rate, block = request.user.block)
                 o.save()
 
@@ -60,9 +61,10 @@ def showmenu(request):
 
     else:
         print(request.user.block)
-        veg = menu.objects.filter(block = request.user.block, cat = "Veg")
-        nonveg = menu.objects.filter(block = request.user.block, cat = "Non veg")
-        return render(request, "menu/menu.html", {"veg": veg, "nonveg": nonveg})
+        veg = menu.objects.filter(block = request.user.block, cat = "Veg", is_available = True)
+        nonveg = menu.objects.filter(block = request.user.block, cat = "Non veg", is_available = True)
+        user_mess = CustomUser.objects.filter(user_type = "M", block = request.user.block)
+        return render(request, "menu/menu.html", {"veg": veg, "nonveg": nonveg, "mess": user_mess})
 
 
 

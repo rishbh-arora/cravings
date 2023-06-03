@@ -61,6 +61,7 @@ class menu(models.Model):
         ("Non veg", "Non veg"),
     )
 
+    is_available = models.BooleanField(default=True)
     block = models.CharField(choices=CustomUser.blocks, max_length=12, default="MA")
     item = models.CharField(max_length=50)
     rate = models.PositiveIntegerField()
@@ -83,4 +84,4 @@ class order(models.Model):
     ready = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.user.username
+        return str(self.token_no)
