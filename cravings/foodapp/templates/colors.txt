@@ -1,5 +1,6 @@
 #00aff5 - light blue
-f0fbff - blue-white
+#f0fbff - blue-white
+#eeeeeea8 - light-grey
 
 background-image: url("../../static/images/398dcf8341363bee65705747a85403c5.jpg");
 
@@ -18,7 +19,40 @@ add item form
                             <label for="itemDescription">Item Description</label>
                             <textarea class="form-control" id="itemDescription" rows="4"></textarea>
                         </div>
+                        <div class="form-group" id="image-input-box">
+                            <label for="itemImage">Add image</label>
+                            <input type="image" src="../../static/images/add-image-32.png" id="itemImage" style="float: right;">
+                        </div>
                     </form>
                 </div>
             </div>
 
+
+profile card
+
+<div class="profile-details">
+            <div class="entry">
+                <span class="entry-heading">Registration No.</span>
+                <span class="entry-content">22BBS0000</span>
+            </div>
+            <div class="entry">
+                <span class="entry-heading">First name</span>
+                <span class="entry-content">Mangesh Gaitonde</span>
+            </div>
+            <div class="entry">
+                <span class="entry-heading">Hostel Type</span>
+                <span class="entry-content">Men's Hostel</span>
+            </div>
+            <div class="entry">
+                <span class="entry-heading">Hostel Block</span>
+                <span class="entry-content">Z</span>
+            </div>
+            <div class="entry">
+                <span class="entry-heading">Contact no</span>
+                <span class="entry-content">7894561234</span>
+            </div>
+            <div class="entry">
+                <span class="entry-heading">Email</span>
+                <span class="entry-content">mangal@gmail.com</span>
+            </div>
+        </div>

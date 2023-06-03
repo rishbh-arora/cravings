@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Source+Sans+Pro&display=swap');
+
+
 .form-box{
     max-width: 400px;
 }
@@ -17,4 +20,45 @@
 
 .form-group label{
     font-weight: 700;
+}
+
+h1{
+    font-size: medium;
+}
+
+#outer-box{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: #f0fbff;
+}
+
+.edit-box{
+    width: 960px;
+    background-color: #fff;
+    padding: 50px;
+}
+
+.form-box{
+    background-color: #f0fbff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 2px solid #eeeeeea8;
+    border-radius: 5px;
+    margin: 25px;
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px;
+}
+
+.box-title{
+    margin-left: 25px;
+}
+.title-text{
+        
+    font-family: 'Montserrat';
+    font-weight: 900;
+    font-size: x-large;
 }
