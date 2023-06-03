@@ -15,32 +15,48 @@
         <link rel="stylesheet" href="https://kit.fontawesome.com/cb5761a778.css" crossorigin="anonymous">
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg " id="navbar" style="background-color: #00AAF5;">
-            <div class="container-fluid">
-              <a class="navbar-brand"  href="#" style="color: #fff"><strong><i style="font-size:xx-large">Cravings</i></strong></a>
-              <button class="navbar-toggler" style="background-color:white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="/profile"><i class="fa-solid fa-user fa-xl profile-img" href="/profile" style="color: #fff;background-color:#00AAF5;border-color:#00AAF5;"></i></a>
-                  </li>             
-                  <li class="nav-item">
-                    <button type="button" style="background-color:#00AAF5;border:none;font-size:large" class="btn btn-secondary" href="login.html"><strong>Logout</strong></button>
-                  </li>             
-                </ul>
-              </div>
-            </div>
-          </nav>
+        <section style="background-color:#00AAF5;">
+            <nav class="navbar navbar-expand-lg " id="navbar" style="background-color: #00AAF5;">
+                <div class="container-fluid">
+                  <a class="navbar-brand"  href="#" style="color: #fff"><strong><i style="font-size:xx-large">Cravings</i></strong></a>
+                  <button class="navbar-toggler" style="background-color:white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                    <ul class="navbar-nav mr-auto">
+                      <li class="nav-link">
+                        <a class="nav-link" href="/profile"><i class="fa-solid fa-user fa-xl profile-img" href="/profile" style="color: #fff;background-color:#00AAF5;border-color:#00AAF5;"></i></a>
+                      </li>
+                      <li class="nav-link">
+                        <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="home-page.html"><strong>Home</strong></a>
+                      </li>             
+                      <li class="nav-link">
+                        <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="menu.html"><strong>Menu</strong></a>
+                      </li>
+                      <li class="nav-link">
+                        <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="invoice.html"><strong>Invoice</strong></a>
+                      </li>              
+                      <li class="nav-link">
+                        <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="orderhistory.html"><strong>Order History</strong></a>
+                      </li>              
+                      <li class="nav-link">
+                        <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="about.html"><strong>About</strong></a>
+                      </li>              
+                      <li class="nav-link">
+                        <a type="button" style="background-color:#00AAF5;border:none;font-size:large" class="btn btn-secondary" href="login.html"><strong>Logout</strong></a>
+                      </li>             
+                    </ul>
+                  </div>
+                </div>
+              </nav> 
 
-        <h1 class="heading1">Our Menu<hr style="height:2px;border:none;color:#000;background-color:#000;"></h1>
-       
+            <h1 class="heading1" style="color:white;padding-bottom:4px; text-shadow: 4px 5px rgba(0, 0, 0, 0.19)">Our Menu</h1>
 
+        </section>
         <div class="row row-incenter">
-            
+
             <div class="dropdown col-lg-12 col-sm-12" id="vegNonVeg" style="width:fit-content">
-                <button class="btn btn-secondary dropdown-toggle" style="background-color: white; color:black; width:fit-content" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-secondary dropdown-toggle" style="background-color: white; color:black; width:fit-content;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Veg/NonVeg
                 </button>
                 <ul class="dropdown-menu">
@@ -53,7 +69,7 @@
                 </ul>
             </div>
             <div class="dropdown col-lg-12 col-sm-12" id="items" style="width:fit-content">
-                <button class="btn btn-secondary dropdown-toggle" style="background-color: white; color:black; width:fit-content" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-secondary dropdown-toggle" style="background-color: white; color:black; width:fit-content;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Items
                 </button>
                 <ul class="dropdown-menu">
@@ -86,42 +102,41 @@
         </div>
 
 
-        
-            
-<h3 class="heading3 this-heading" id="veg">Veg</h3>
-<div class="dropdown col-lg-12 col-sm-12" id="items" style="width:fit-content;">
-    <button class="btn btn-secondary dropdown-toggle" style="background-color: white; color:black; width:fit-content;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Items
-    </button>
-    <ul class="dropdown-menu">
-        <li>
-            <a class="dropdown-item" href="#burger">Burgers</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#dosa">Dosa</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#idli">Idli</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#sandwich">Sandwich</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#pasta">Pasta</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#frenchfries">French Fries</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#vadapav">Vada Pav</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#juice">Juice</a>
-        </li>
-    </ul>
-</div>
-
-<div class="row">
+        <div class="row">
+            <h3 class="heading3 this-heading col-lg-1 col-md-1"  id="veg">Veg</h3>
+            <div class="dropdown col-lg-12 col-sm-12 " id="items" style="width:fit-content;">
+                <button class="btn btn-secondary dropdown-toggle col-lg-1 col-md-2 col-sm-1" style="background-color: white; color:black; width:fit-content;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Items
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="dropdown-item" href="#burger">Burgers</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#dosa">Dosa</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#idli">Idli</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#sandwich">Sandwich</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#pasta">Pasta</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#frenchfries">French Fries</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#vadapav">Vada Pav</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#juice">Juice</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
             <div class="container d-flex mt-4 p-4  col-5" id="burger" style="display:flex; flex-direction: row; justify-content:space-around">
 
                 <div class="card mb-3" style="width: 512px;">
@@ -133,7 +148,7 @@
 
                             <div class="card-body">
                                 <div>
-                                    
+
                                     <label>
                                         <h5 class="card-title">
                                             Burger
@@ -143,7 +158,7 @@
                                 <p class="price">
                                     <small>₹100</small>
                                 </p>
-                                <input style="width:100px" type="number" min="0" max="5" placeholder="Quantity">
+                                <input style="width:50px" type="number" min="0" max="5" value="0" placeholder="Quantity">
                             </div>
 
                         </div>
@@ -160,7 +175,7 @@
 
                             <div class="card-body">
                                 <div>
-                                    
+
                                     <label>
                                         <h5 class="card-title">
                                             Pizza
@@ -170,7 +185,7 @@
                                 <p class="price">
                                     <small>₹100</small>
                                 </p>
-                                <input style="width:100px" type="number" min="0" max="5" placeholder="Quantity">
+                                <input style="width:50px" type="number" min="0" max="5" value="0" placeholder="Quantity">
                             </div>
 
                         </div>
@@ -188,7 +203,7 @@
 
                             <div class="card-body">
                                 <div>
-                                    
+
                                     <label>
                                         <h5 class="card-title">
                                             Pasta
@@ -198,7 +213,7 @@
                                 <p class="price">
                                     <small>₹100</small>
                                 </p>
-                                <input style="width:100px" type="number" min="0" max="5" placeholder="Quantity">
+                                <input style="width:50px" type="number" min="0" max="5" value="0" placeholder="Quantity">
                             </div>
 
                         </div>
@@ -216,7 +231,7 @@
 
                             <div class="card-body">
                                 <div>
-                                    
+
                                     <label>
                                         <h5 class="card-title">
                                             fries
@@ -226,7 +241,7 @@
                                 <p class="price">
                                     <small>₹100</small>
                                 </p>
-                                <input style="width:100px" type="number" min="0" max="5" placeholder="Quantity">
+                                <input style="width:50px" type="number" min="0" max="5" value="0" placeholder="Quantity">
                             </div>
 
                         </div>
@@ -243,7 +258,7 @@
 
                             <div class="card-body">
                                 <div>
-                                    
+
                                     <label>
                                         <h5 class="card-title">
                                             fries
@@ -253,7 +268,7 @@
                                 <p class="price">
                                     <small>₹100</small>
                                 </p>
-                                <input style="width:100px" type="number" min="0" max="5" placeholder="Quantity">
+                                <input style="width:50px" type="number" min="0" max="5" value="0" placeholder="Quantity">
                             </div>
 
                         </div>
@@ -270,7 +285,7 @@
 
                             <div class="card-body">
                                 <div>
-                                    
+
                                     <label>
                                         <h5 class="card-title">
                                             fries
@@ -280,7 +295,7 @@
                                 <p class="price">
                                     <small>₹100</small>
                                 </p>
-                                <input style="width:100px" type="number" min="0" max="5" placeholder="Quantity">
+                                <input style="width:50px" type="number" min="0" max="5" value="0" placeholder="Quantity">
                             </div>
 
                         </div>
@@ -297,7 +312,7 @@
 
                             <div class="card-body">
                                 <div>
-                                    
+
                                     <label>
                                         <h5 class="card-title">
                                             fries
@@ -307,47 +322,79 @@
                                 <p class="price">
                                     <small>₹100</small>
                                 </p>
-                                <input style="width:100px" type="number" min="0" max="5" placeholder="Quantity">
+                                <input style="width:50px" type="number" min="0" max="5" value="0" placeholder="Quantity">
                             </div>
 
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="container d-flex mt-4 p-4  col-5" id="burger" style="display:flex; flex-direction: row; justify-content:space-around">
+
+                <div class="card mb-3" style="width: 512px;">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <img src="/images/burgers.jpg" style="height:140px;" class="img-fluid rounded" alt="Burger">
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="card-body">
+                                <div>
+
+                                    <label>
+                                        <h5 class="card-title">
+                                            Burger
+                                        </h5>
+                                    </label>
+                                </div>
+                                <p class="price">
+                                    <small>₹100</small>
+                                </p>
+                                <input style="width:50px" type="number" min="0" max="5" value="0" placeholder="Quantity">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
-<h3 class="heading3 this-heading" id="nonveg">Non-Veg</h3>
-<div class="dropdown col-lg-12 col-sm-12" id="items" style="width:fit-content;">
-    <button class="btn btn-secondary dropdown-toggle" style="background-color: white; color:black; width:fit-content;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Items
-    </button>
-    <ul class="dropdown-menu">
-        <li>
-            <a class="dropdown-item" href="#burger">Burgers</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#dosa">Dosa</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#idli">Idli</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#sandwich">Sandwich</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#pasta">Pasta</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#frenchfries">French Fries</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#vadapav">Vada Pav</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#juice">Juice</a>
-        </li>
-    </ul>
-</div>
-            <div class="row">
+        </div>
+
+<hr class="line">
+        <div class="row">
+            <h3 class="heading3 this-heading col-lg-2 col-md-3 col-sm-3" id="nonveg">Non-Veg</h3>
+            <div class="dropdown col-lg-12 col-sm-12 col-lg-1 col-md-2 col-sm-3" id="items" style="width:fit-content;">
+                <button class="btn btn-secondary dropdown-toggle" style="background-color: white; color:black; width:fit-content;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Items
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="dropdown-item" href="#burger">Burgers</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#dosa">Dosa</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#idli">Idli</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#sandwich">Sandwich</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#pasta">Pasta</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#frenchfries">French Fries</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#vadapav">Vada Pav</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#juice">Juice</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
 
             <div class="container d-flex mt-4 p-4 col-5" id="fries" style="display:flex; flex-direction: row; justify-content:space-around">
                 <div class="card mb-3" style="width: 512px;">
@@ -359,7 +406,7 @@
 
                             <div class="card-body">
                                 <div>
-                                    
+
                                     <label>
                                         <h5 class="card-title">
                                             fries
@@ -369,7 +416,7 @@
                                 <p class="price">
                                     <small>₹100</small>
                                 </p>
-                                <input style="width:100px" type="number" min="0" max="5" placeholder="Quantity">
+                                <input style="width:50px" type="number" min="0" max="5" value="0" placeholder="Quantity">
                             </div>
 
                         </div>
@@ -386,7 +433,7 @@
 
                             <div class="card-body">
                                 <div>
-                                    
+
                                     <label>
                                         <h5 class="card-title">
                                             fries
@@ -396,7 +443,7 @@
                                 <p class="price">
                                     <small>₹100</small>
                                 </p>
-                                <input style="width:100px" type="number" min="0" max="5" placeholder="Quantity">
+                                <input style="width:50px" type="number" min="0" max="5" value="0" placeholder="Quantity">
                             </div>
 
                         </div>
@@ -413,7 +460,7 @@
 
                             <div class="card-body">
                                 <div>
-                                    
+
                                     <label>
                                         <h5 class="card-title">
                                             fries
@@ -423,7 +470,7 @@
                                 <p class="price">
                                     <small>₹100</small>
                                 </p>
-                                <input style="width:100px" type="number" min="0" max="5" placeholder="Quantity">
+                                <input style="width:50px" type="number" min="0" max="5" value="0" placeholder="Quantity">
                             </div>
 
                         </div>
@@ -440,7 +487,7 @@
 
                             <div class="card-body">
                                 <div>
-                                    
+
                                     <label>
                                         <h5 class="card-title">
                                             fries
@@ -450,7 +497,7 @@
                                 <p class="price">
                                     <small>₹100</small>
                                 </p>
-                                <input style="width:100px" type="number" min="0" max="5" placeholder="Quantity">
+                                <input style="width:50px" type="number" min="0" max="5" value="0" placeholder="Quantity">
                             </div>
 
                         </div>
@@ -467,7 +514,7 @@
 
                             <div class="card-body">
                                 <div>
-                                    
+
                                     <label>
                                         <h5 class="card-title">
                                             fries
@@ -477,7 +524,7 @@
                                 <p class="price">
                                     <small>₹100</small>
                                 </p>
-                                <input style="width:100px" type="number" min="0" max="5" placeholder="Quantity">
+                                <input style="width:50px" type="number" min="0" max="5" value="0" placeholder="Quantity">
                             </div>
 
                         </div>
@@ -494,7 +541,7 @@
 
                             <div class="card-body">
                                 <div>
-                                    
+
                                     <label>
                                         <h5 class="card-title">
                                             fries
@@ -504,7 +551,35 @@
                                 <p class="price">
                                     <small>₹100</small>
                                 </p>
-                                <input style="width:100px" type="number" min="0" max="5" placeholder="Quantity">
+                                <input style="width:50px" type="number" min="0" max="5" value="0" placeholder="Quantity">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container d-flex mt-4 p-4  col-5" id="burger" style="display:flex; flex-direction: row; justify-content:space-around">
+
+                <div class="card mb-3" style="width: 512px;">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <img src="/images/burgers.jpg" style="height:140px;" class="img-fluid rounded" alt="Burger">
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="card-body">
+                                <div>
+
+                                    <label>
+                                        <h5 class="card-title">
+                                            Burger
+                                        </h5>
+                                    </label>
+                                </div>
+                                <p class="price">
+                                    <small>₹100</small>
+                                </p>
+                                <input style="width:50px" type="number" min="0" max="5" value="0" placeholder="Quantity">
                             </div>
 
                         </div>
@@ -521,7 +596,7 @@
 
                             <div class="card-body">
                                 <div>
-                                    
+
                                     <label>
                                         <h5 class="card-title">
                                             fries
@@ -531,7 +606,7 @@
                                 <p class="price">
                                     <small>₹100</small>
                                 </p>
-                                <input style="width:100px" type="number" min="0" max="5" placeholder="Quantity">
+                                <input style="width:50px" type="number" min="0" max="5" value="0" placeholder="Quantity">
                             </div>
 
                         </div>
@@ -541,9 +616,13 @@
 
         </div>
     </div>
-   </div><div class="menuButton" style="display:flex; flex-direction: row; justify-content:space-around">
-<button class="menu-button">
-    <a style="color:white; text-decoration:none;" href="#">Place Order</a>
-</button></div>
- </body>
+</div>
+<section style="background-color:#00AAF5">
+    <div class="menuButton" style="display:flex; flex-direction: row; justify-content:space-around">
+        <button class="menu-button" style="background-color:white">
+            <a style="color:#00AAF5; text-decoration:none;" href="#">Place Order</a>
+        </button>
+    </div>
+</section>
+</body>
 </html>

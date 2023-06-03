@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>order table</title>
+    <title>Customer Order History</title>
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'tablepage.css' %}">
-    <script src="{% static 'script.js' %}"></script> 
     <link rel="stylesheet" href="{% static 'navbar.css' %}">
     <link rel="stylesheet" href="tablepage.css">
     <link rel="stylesheet" href="navbar.css">
@@ -33,19 +31,31 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
+          <li class="nav-link">
             <a class="nav-link" href="/profile"><i class="fa-solid fa-user fa-xl profile-img" href="/profile" style="color: #fff;background-color:#00AAF5;border-color:#00AAF5;"></i></a>
           </li>
           <li class="nav-link">
-            <a href="/mess_home">Home</a>
-          </li>                     
-          <li class="nav-item">
-            <a type="button" style="background-color:#00AAF5;border:none;font-size:large" class="btn btn-secondary" href="/logout"><strong>Logout</strong></a>
+            <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="home-page.html"><strong>Home</strong></a>
+          </li>             
+          <li class="nav-link">
+            <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="menu.html"><strong>Menu</strong></a>
+          </li>
+          <li class="nav-link">
+            <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="invoice.html"><strong>Invoice</strong></a>
+          </li>              
+          <li class="nav-link">
+            <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="orderhistory.html"><strong>Order History</strong></a>
+          </li>              
+          <li class="nav-link">
+            <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="about.html"><strong>About</strong></a>
+          </li>              
+          <li class="nav-link">
+            <a type="button" style="background-color:#00AAF5;border:none;font-size:large" class="btn btn-secondary" href="login.html"><strong>Logout</strong></a>
           </li>             
         </ul>
       </div>
     </div>
-  </nav> 
+  </nav>
 
     <div class="table-page">
 
@@ -53,53 +63,42 @@
 
     <div class="middle">    
 
-        <div class="title"><h2>Orders</h2></div>
+        <div class="title"><h2>Order History</h2></div>
 
         <div class="table-container">
 
         <table class="table table-hover">
             <thead class="thead-light">
               <tr>
-                <th scope="col">Token no.</th>
-                <th scope="col">Name</th>
+                <th scope="col">Order Date</th>
                 <th scope="col">Items</th>
                 <th scope="col">Rate</th>
-                <th scope="col">Quantity</th>
                 <th scope="col">Price</th>
-                <th scope="col">Confirm</th>
               </tr>
-            </thead>  
+            </thead>
             <tbody>
 
-              {% for order in orders %}
-              <form method="post" action="/mess" onsubmit="myfunction({{order.id}})">
-                {% csrf_token %}
+              {% for no in token_nos %}
               <tr>
-                <td><input type="number" value={{order.token_no}} id={{order.id}} min="{{order.token_no}}" max="{{order.token_no}}"></td>
-                <td>{{order.user}}</td> 
+                <th scope="row">4 june, 2023</th>
                 <td>
-                    <ul>
-                        <li>{{order.item}}</li>
-                    </ul>
+                  <ul>
+                    <li>Masala Dosa</li>
+                    <li>Vada</li>
+                    <li>Kitkat</li>
+                  </ul>
                 </td>
                 <td>
                     <ul>
-                        <li>{{order.item.rate}}</li>
+                        <li>100</li>
+                        <li>50</li>
+                        <li>20</li>
                     </ul>
                 </td>
-                <td>{{order.quantity}}</td>
-                <td>{{order.total}}</td>
-                <td>
-                    <div class="form-check">
-                        <input type="submit" value="Ready">
-                        <label class="form-check-label" for="flexCheckDefault">
-                        </label>
-                    </div>
-                </td>
+                <td>170</td>
+                
               </tr>
-            </form>
-            {% endfor%}
-         
+              {% endfor %}
             </tbody>
           </table>
         </div>

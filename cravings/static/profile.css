@@ -1,0 +1,16 @@
+
+#heading{
+    display: inline-block;
+    
+}
+
+#head{
+    display: inline-block;
+    text-align: center;
+    position:fixed;
+    margin-left: 25px;
+    margin-top:25px;
+}
+img{
+    border-radius: 50%;
+}

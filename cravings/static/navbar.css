@@ -1,25 +1,19 @@
 
-/* .navbar{
-    -webkit-box-shadow: 0 8px 6px -6px #999;
-    -moz-box-shadow: 0 8px 6px -6px #999;
-    box-shadow: 0 8px 6px -6px #999;
-    }    */
+thead{
+    background-color: #00aff5;
+}
 
-    thead{
-        background-color: #00aff5;
-    }
-    
-    .nav-item{
-        padding: 0 10px 0 10px;
-    }
-    
-    .nav-link{
-        font-family: 'Montserrat';
-        font-size: large;
-        font-weight: 400;
-    }
-    
-    .nav-link a{
-        text-decoration: none;
-        color: #fff;
-    }
+.nav-item{
+    padding: 0 10px 0 10px;
+}
+
+.nav-link{
+    font-family: 'Montserrat';
+    font-size: large;
+    font-weight: 400;
+}
+
+.nav-link a{
+    text-decoration: none;
+    color: #fff;
+}
