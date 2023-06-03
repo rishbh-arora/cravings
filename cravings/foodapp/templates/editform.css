@@ -1,0 +1,20 @@
+.form-box{
+    max-width: 400px;
+}
+
+.form-group{
+    margin: 20px;
+}
+
+#image-input-box{
+    display: flex;
+    align-items: center;
+}
+
+#itemImage{
+    float: right;
+}
+
+.form-group label{
+    font-weight: 700;
+}

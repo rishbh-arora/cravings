@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <!-- {% load static %} -->
+    {% load static %}
     <link rel="stylesheet" href="{% static 'invoicepage.css' %}">
     <link rel="stylesheet" href="invoicepage.css">
     <link rel="stylesheet" href="{% static 'navbar.css' %}">
     <link rel="stylesheet" href="navbar.css">
+    
+    <script src="navbar.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
@@ -21,14 +23,14 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg " id="navbar"style="background-color: #00aff5;">
+    <nav class="navbar sticky-top navbar-expand-lg " id="navbar" style="background-color: #00aff5;">
         <div class="container-fluid">
           <a class="navbar-brand" href="#" style="color: #fff">Cravings</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-            <ul class="navbar-nav mr-auto">
+          <div class="collapse navbar-collapse justify-content-end mr-auto" id="navbarNavDropdown">
+            <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" href="/profile"><i class="fa-solid fa-user fa-xl profile-img" href="/profile" style="color: #fff"></i></a>
               </li>             
@@ -40,6 +42,7 @@
         </div>
       </nav>
     
+      
     <div class="container-fluid">    
         <div class="row d-flex justify-content-center">    
             <div class="col-md-8">    
@@ -47,7 +50,7 @@
                     <div class="invoice p-5">
                         <h5>Your order Confirmed!</h5>
 
-                        <span class="font-weight-bold d-block mt-4">Hello, {{user.first_name}}</span>
+                        <span class="font-weight-bold d-block mt-4">Hello, Anush</span>
                         <span>You order has been confirmed and is being prepared!</span>
     
                         <div class="payment border-top mt-3 mb-3 border-bottom table-responsive">  
@@ -71,17 +74,13 @@
                                         <td>
                                             <div class="py-2">    
                                                 <span class="d-block text-muted">Payment</span>
-                                                <span><img src="https://img.icons8.com/color/48/000000/mastercard.png"
-                                                        width="20" /></span>
+                                                <span><i class="fa-brands fa-google-pay fa-2xl"></i></span>
                                             </div>
                                         </td>
                                     </tr>
                                 </tbody>    
                             </table>     
-                           </div>
-    
-    
-    
+                           </div>      
     
                         <div class="product border-bottom table-responsive">    
                             <table class="table table-borderless">    
@@ -187,32 +186,19 @@
                         </div>
     
                         <p class="font-weight-bold mb-0">Thanks for dining with us!</p>
-                        <span>Mangesh Caterers</span>
-    
-    
-    
-    
-    
+                        <span>Mangesh Caterers</span>  
                     </div>
     
     
                     <div class="d-flex justify-content-between footer p-3">
-    
                         <span>Need Help? visit our <a href="#"> help center</a></span>
                         <span>4 June, 2023</span>
-    
                     </div>
-    
-    
-    
-    
                 </div>
-    
-            </div>
-    
+            </div>    
         </div>
-    
-    </div>
+
+</div>
 </body>
 </html>
 
