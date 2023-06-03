@@ -37,13 +37,10 @@
             <a class="nav-link" href="/profile"><i class="fa-solid fa-user fa-xl profile-img" href="/profile" style="color: #fff;background-color:#00AAF5;border-color:#00AAF5;"></i></a>
           </li>
           <li class="nav-link">
-            <a href="../../../views/home-page.html">Home</a>
-          </li>             
-          <li class="nav-link">
-            <a href="../templates/menu/menu.html">Menu</a>
-          </li>             
+            <a href="/mess_home">Home</a>
+          </li>                     
           <li class="nav-item">
-            <a type="button" style="background-color:#00AAF5;border:none;font-size:large" class="btn btn-secondary" href="login.html"><strong>Logout</strong></a>
+            <a type="button" style="background-color:#00AAF5;border:none;font-size:large" class="btn btn-secondary" href="/logout"><strong>Logout</strong></a>
           </li>             
         </ul>
       </div>
@@ -74,11 +71,11 @@
             </thead>  
             <tbody>
 
-              {% for order in orders%}
+              {% for order in orders %}
               <form method="post" action="/mess" onsubmit="myfunction({{order.id}})">
                 {% csrf_token %}
               <tr>
-                <td><input type="text" value = {{order.token_no}} id = {{order.id}} disabled></td>
+                <td><input type="number" value={{order.token_no}} id={{order.id}} min="{{order.token_no}}" max="{{order.token_no}}"></td>
                 <td>{{order.user}}</td> 
                 <td>
                     <ul>

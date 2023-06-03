@@ -18,6 +18,14 @@ def invoice(request):
     con=0.075*subtotal    
     return render(request, "invoice.html")
 
+def mess_home(request):
+    if request.method == "POST":
+        items = request.POST.getlist("chk[]")
+        print(items)
+    items = menu.objects.filter(block = request.user.block)
+    print(items)
+    return render(request, "mess-menu.html", context = {"items": items})
+
 def mess(request):
     if request.method == "POST":
         token = request.POST['token1']
@@ -81,7 +89,7 @@ def login(request):
             if user.user_type == "S":
                 return redirect("/menu")
             else:
-                return redirect("/mess")
+                return redirect("/mess_home")
             
         elif CustomUser.objects.filter(username = username).exists():
             messages.info(request, "Password does not match")
@@ -95,7 +103,7 @@ def login(request):
             if request.user.user_type == "S":
                 return redirect("/menu")
             else:
-                return redirect("/mess")
+                return redirect("/mess_home")
         else:
             return render(request, "login.html")
         
@@ -175,3 +183,13 @@ def messsignup(request):
     else:
         return render(request, "messsignup.html")
     
+def add_item(request):
+    if request.method == "POST":
+        name = request.POST["name"]
+        rate = request.POST["mrp"]
+        cat = request.POST["cat"]
+        item = menu(block = request.user.block, item = name, rate = rate, cat = cat)
+        item.save()
+        return redirect("/mess_home")
+    
+    return render(request, "additem.html")

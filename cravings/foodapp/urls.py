@@ -11,4 +11,6 @@ urlpatterns = [
     path("logout", views.logout),
     path("invoice", views.invoice),
     path("messsignup", views.messsignup),
+    path("mess_home", views.mess_home),
+    path("add_item", views.add_item),
 ]
