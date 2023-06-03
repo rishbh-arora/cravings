@@ -55,9 +55,16 @@ class CustomUser(AbstractUser):
     block = models.CharField(choices=blocks, max_length=12, default="MA")
 
 class menu(models.Model):
+
+    vegnoveg = (
+        ("Veg", "Veg"),
+        ("Non veg", "Non veg"),
+    )
+
     block = models.CharField(choices=CustomUser.blocks, max_length=12, default="MA")
     item = models.CharField(max_length=50)
     rate = models.PositiveIntegerField()
+    cat = models.CharField(choices=vegnoveg, max_length=7, default="Veg")
 
     def __str__(self):
         return self.item
