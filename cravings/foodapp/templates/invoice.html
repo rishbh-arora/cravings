@@ -59,22 +59,15 @@
                                     <tr>
                                         <td>
                                             <div class="py-2">    
-                                                <span class="d-block text-muted">Order Date</span>
-                                                <span>4 Jun, 2023</span>    
+                                                <span class="d-block text-muted">Order Date and time</span>
+                                                <span>{{date_time}}</span>    
                                             </div>
                                         </td>
     
                                         <td>
                                             <div class="py-2">    
                                                 <span class="d-block text-muted">Order No</span>
-                                                <span>16</span>
-                                            </div>
-                                        </td>
-    
-                                        <td>
-                                            <div class="py-2">    
-                                                <span class="d-block text-muted">Payment</span>
-                                                <span><i class="fa-brands fa-google-pay fa-2xl"></i></span>
+                                                <span>{{token}}</span>
                                             </div>
                                         </td>
                                     </tr>
@@ -85,42 +78,30 @@
                         <div class="product border-bottom table-responsive">    
                             <table class="table table-borderless">    
                                 <tbody>
+                                    {% for item in orders %}
                                     <tr>
                                         <td width="20%">    
                                             <img src="../../static/images/burgers.jpg" width="90">    
                                         </td>
     
-                                        <td width="60%">
-                                            <span class="font-weight-bold">Chicken Burger</span>
+                                        <td width="10%">
+                                            <span class="font-weight-bold">{{item.item}}</span>
                                             <div class="product-qty">
-                                                <span class="d-block">Quantity:1</span>                                  
+                                                <span class="d-block">{{item.quantity}}</span>                                  
+                                            </div>
+                                        </td>
+                                        <td width="50%">
+                                            <div class="text-right">
+                                                <span class="font-weight-bold">Rs. {{item.item.rate}}</span>
                                             </div>
                                         </td>
                                         <td width="20%">
                                             <div class="text-right">
-                                                <span class="font-weight-bold">Rs. 120</span>
+                                                <span class="font-weight-bold">Rs. {{item.total}}</span>
                                             </div>
                                         </td>
                                     </tr>   
-    
-                                    <tr>
-                                        <td width="20%">    
-                                            <img src="../../static/images/momos.webp" width="70">    
-                                        </td>
-    
-                                        <td width="60%">
-                                            <span class="font-weight-bold">Paneer Fried Momos</span>
-                                            <div class="product-qty">
-                                                <span class="d-block">Quantity:2</span>
-    
-                                            </div>
-                                        </td>
-                                        <td width="20%">
-                                            <div class="text-right">
-                                                <span class="font-weight-bold">Rs. 140</span>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                {% endfor %}
                                 </tbody>    
                             </table>   
                         </div>
@@ -139,7 +120,7 @@
                                             </td>
                                             <td>
                                                 <div class="text-right">
-                                                    <span>Rs. 260</span>
+                                                    <span>Rs. {{total}}</span>
                                                 </div>
                                             </td>
                                         </tr>
@@ -155,7 +136,7 @@
                                             </td>
                                             <td>
                                                 <div class="text-right">
-                                                    <span>Rs. 26</span>
+                                                    <span>Rs. {{sub}}</span>
                                                 </div>
                                             </td>
                                         </tr>    
@@ -164,13 +145,13 @@
                                             <td>
                                                 <div class="text-left">
     
-                                                    <span class="font-weight-bold">Subtotal</span>
+                                                    <span class="font-weight-bold">Grand total</span>
     
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="text-right">
-                                                    <span class="font-weight-bold">Rs. 282</span>
+                                                    <span class="font-weight-bold">Rs. {{grand}}</span>
                                                 </div>
                                             </td>
                                         </tr>
