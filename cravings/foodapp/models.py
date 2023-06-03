@@ -1,18 +1,18 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-
+from django.http import HttpResponse, HttpRequest
 import datetime
 
 class CustomUser(AbstractUser):
 
     gender = (
-        ("Male", "M"),
-        ("Female", "F"),
+        ("M", "M"),
+        ("F", "F"),
     )
 
     user_type = (
-        ("Student", "S"),
-        ("Mess", "M"),
+        ("S", "S"),
+        ("M", "M"),
     )
 
     blocks = (
@@ -64,7 +64,8 @@ class menu(models.Model):
     
 
 class order(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    block = models.CharField(max_length=4, default = "base")
     token_no= models.PositiveIntegerField()
     quantity = models.PositiveIntegerField()
     item = models.ForeignKey(menu, on_delete=models.CASCADE)

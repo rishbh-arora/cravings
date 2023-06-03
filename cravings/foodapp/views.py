@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpRequest
 from django.contrib.auth.models import auth
 from django.contrib import messages
 from .models import CustomUser, menu, order
+import datetime
 
 def messsignup(request):
     return render(request, "messsignup.html")
@@ -11,9 +12,22 @@ def profile(request):
     return render(request, "profile.html")
 
 def invoice(request):
+    d = order.objects.all().values_list("total")
+    for i in d:
+        subtotal=subtotal+i
+    con=0.075*subtotal    
     return render(request, "invoice.html")
 
 def mess(request):
+    print(request.user.block)
+    nos = list(set(order.objects.filter(valid = True, block = request.user.block).values_list("token_no").distinct()))
+    tokens = []
+    for i in nos:
+        tokens.append(i[0])
+    print(tokens)
+    users = order.objects.filter(valid = True, block = request.user.block).values_list("user").distinct()
+    orders = order.objects.filter(valid = True, block = request.user.block)
+
     return render(request, "ordertable.html")
 
 def logout(request):
@@ -28,15 +42,21 @@ def showmenu(request):
             quantity.append(request.POST[str(i.id)])
         print (quantity)
 
-        last_token = order.objects.latest("token_no").token_no + 1
-        print(last_token)
+        cur_token = order.objects.latest("token_no").token_no + 1
 
         for i in range(len(quantity)):
             if quantity[i] != 0:
-                o = order(user = request.user, token_no = last_token , quantity = quantity[i], item = items[i], total =  int(quantity[i])*items[i].rate)
-                print(o.total)
+                o = order(user = request.user, token_no = cur_token , quantity = quantity[i], item = items[i], total =  int(quantity[i])*items[i].rate, block = request.user.block)
                 o.save()
-        return redirect("/")
+
+        cur_orders = order.objects.filter(token_no = cur_token)
+
+        total = 0
+        for i in cur_orders:
+            total += i.total
+
+        dic = {"orders": cur_orders, "total":total, "sub": total*0.075, "grand": total*1.075, "token":cur_token, "date_time": datetime.datetime.now().strftime("%d/%m/%Y \n %H:%M:%S")}
+        return render(request, "invoice.html", context=dic)
 
     else:
         print(request.user.block)
