@@ -41,7 +41,7 @@ h1{
 
 .form-box{
     background-color: #f0fbff;
-    box-shadow: 2px 2px 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border: 2px solid #eeeeeea8;
     border-radius: 5px;
     margin: 25px;

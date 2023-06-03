@@ -27,3 +27,32 @@ add item form
                 </div>
             </div>
 
+
+profile card
+
+<div class="profile-details">
+            <div class="entry">
+                <span class="entry-heading">Registration No.</span>
+                <span class="entry-content">22BBS0000</span>
+            </div>
+            <div class="entry">
+                <span class="entry-heading">First name</span>
+                <span class="entry-content">Mangesh Gaitonde</span>
+            </div>
+            <div class="entry">
+                <span class="entry-heading">Hostel Type</span>
+                <span class="entry-content">Men's Hostel</span>
+            </div>
+            <div class="entry">
+                <span class="entry-heading">Hostel Block</span>
+                <span class="entry-content">Z</span>
+            </div>
+            <div class="entry">
+                <span class="entry-heading">Contact no</span>
+                <span class="entry-content">7894561234</span>
+            </div>
+            <div class="entry">
+                <span class="entry-heading">Email</span>
+                <span class="entry-content">mangal@gmail.com</span>
+            </div>
+        </div>
