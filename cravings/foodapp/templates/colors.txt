@@ -1,5 +1,6 @@
 #00aff5 - light blue
-f0fbff - blue-white
+#f0fbff - blue-white
+#eeeeeea8 - light-grey
 
 background-image: url("../../static/images/398dcf8341363bee65705747a85403c5.jpg");
 
@@ -17,6 +18,10 @@ add item form
                         <div class="form-group">
                             <label for="itemDescription">Item Description</label>
                             <textarea class="form-control" id="itemDescription" rows="4"></textarea>
+                        </div>
+                        <div class="form-group" id="image-input-box">
+                            <label for="itemImage">Add image</label>
+                            <input type="image" src="../../static/images/add-image-32.png" id="itemImage" style="float: right;">
                         </div>
                     </form>
                 </div>

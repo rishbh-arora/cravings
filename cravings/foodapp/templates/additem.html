@@ -15,30 +15,35 @@
 </head>
 <body>
 
-    <nav class="navbar sticky-top navbar-expand-lg " id="navbar" style="background-color: #00aff5;">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#" style="color: #fff">Cravings</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end mr-auto" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="/profile"><i class="fa-solid fa-user fa-xl profile-img" href="/profile" style="color: #fff"></i></a>
-              </li>             
-              <li class="nav-item">
-                <button type="button" class="btn btn-secondary" href="login.html">Logout</button>
-              </li>             
-            </ul>
-          </div>
-        </div>
-      </nav>    
+  <nav class="navbar navbar-expand-lg " id="navbar" style="background-color: #00AAF5;">
+    <div class="container-fluid">
+      <a class="navbar-brand"  href="#" style="color: #fff"><strong><i style="font-size:xx-large">Cravings</i></strong></a>
+      <button class="navbar-toggler" style="background-color:white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/profile"><i class="fa-solid fa-user fa-xl profile-img" href="/profile" style="color: #fff;background-color:#00AAF5;border-color:#00AAF5;"></i></a>
+          </li>             
+          <li class="nav-item">
+            <a type="button" style="background-color:#00AAF5;border:none;font-size:large" class="btn btn-secondary" href="login.html"><strong>Logout</strong></a>
+          </li>             
+        </ul>
+      </div>
+    </div>
+  </nav>  
 
-      <div class="container my-5">
-        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
-          <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-            <h1 class="display-4 fw-bold lh-1 text-body-emphasis">Add Item</h1>
-            <div class="form-box">
+      <div class="container-fluid" id="outer-box">
+        <div class="edit-box">
+          <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+              <img src="../../static/images/loginbg.jpeg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" height="1400" width="500" loading="lazy">
+            </div>
+            <div class="col-lg-6">
+              <div class="box-title"><h1 style="font-family: 'Montserrat', sans-serif;">Add Item</h1></div>
+              
+              
                 <div class="form-box">
                     <form action="">
                         <div class="form-group">
@@ -53,16 +58,13 @@
                             <label for="itemImage">Add image</label>
                             <input type="image" src="../../static/images/add-image-32.png" id="itemImage" style="float: right;">
                         </div>
+                        <div class="button-container">
+                          <button type="button" class="btn btn-primary btn-md px-4 me-md-2" fdprocessedid="1ive3">Save</button>
+                          <button type="button" class="btn btn-outline-secondary btn-md px-4" fdprocessedid="nhqsf5">Cancel</button>
+                        </div>
                     </form>
-                </div>
+                </div>          
             </div>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-              <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold" fdprocessedid="14gllc">Save</button>
-              <button type="button" class="btn btn-outline-secondary btn-lg px-4" fdprocessedid="xn2lnb">Cancel</button>
-            </div>
-          </div>
-          <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-              <img class="rounded-lg-3" src="../../static/images/loginbg.jpeg" alt="" width="720">
           </div>
         </div>
       </div>
