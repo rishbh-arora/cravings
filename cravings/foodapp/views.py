@@ -19,19 +19,20 @@ def logout(request):
 
 def showmenu(request):
     if request.method == "POST":
-        items = request.POST.getlist("chk[]")
+        items = menu.objects.filter(block = request.user.block)
         quantity = []
         for i in items:
-            quantity.append(request.POST[i])
+            quantity.append(request.POST[str(i.id)])
         print (quantity)
 
-        last_token = order.objects.latest("token_no")
+        last_token = order.objects.latest("token_no").token_no + 1
         print(last_token)
-        for i in items:
-            item = menu.objects.get(id = int(i))
-            print(item)
-            o = order(user = request.user, token_no = last_token , quantity = quantity[i], menu = item, total =  quantity[i]*item.rate)
-            o.save()
+
+        for i in range(len(quantity)):
+            if quantity[i] != 0:
+                o = order(user = request.user, token_no = last_token , quantity = quantity[i], item = items[i], total =  int(quantity[i])*items[i].rate)
+                print(o.total)
+                o.save()
         return redirect("/")
 
     else:
