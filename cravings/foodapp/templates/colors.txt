@@ -4,3 +4,21 @@ f0fbff - blue-white
 background-image: url("../../static/images/398dcf8341363bee65705747a85403c5.jpg");
 
 mt-5 mb-5
+
+add item form 
+
+<div class="form-box">
+                <div class="form-box">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="itemName">Item Name</label>
+                            <input type="text" class="form-control" id="itemName">
+                        </div>
+                        <div class="form-group">
+                            <label for="itemDescription">Item Description</label>
+                            <textarea class="form-control" id="itemDescription" rows="4"></textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+

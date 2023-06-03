@@ -31,6 +31,6 @@ body {
 }
 
 body > .container-fluid{
-    /* background-image: url("../../static/images/loginbg.jpeg"); */
     background-color: #f0fbff;
 }
+
