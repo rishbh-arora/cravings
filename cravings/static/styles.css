@@ -1,34 +1,32 @@
-body{
-    overflow-x: hidden;
-}
 
 .heading1{
     text-align: center;
     font-size: 3rem;
     font-family: 'Montserrat', 'sans-serif';
     margin: 2%;
+    
 }
+
 .heading2{
     font-size: 3rem;
     font-family: 'Montserrat', 'sans-serif';
     margin: 2%;
 }
 .heading3{
-    font-family: 'Montserrat', 'sans-serif';
+    
     text-align: center;
+}
+.profile-section{
+    text-align: center;
+    border : 3px solid black;
+    background-color: #F0EEED;
+    border-radius:40px;
+    width:400px;
+    height:350px
+    
 }
 .card{
  margin: 5px;
- box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.card:hover{
-    position: relative; 
-    top: -10px;
-
-    transition: 1s;
-  }
-.line{
-    height: 50px;
 }
 
 .dropdown{
@@ -43,7 +41,8 @@ body{
     align-items: center;
     justify-content: center;
 }
-.menu-button{ 
+.menu-button{
+    background-color: #00AFF5; 
     color:white;
     border-width:0px; 
     display: inline-block;
@@ -51,11 +50,12 @@ body{
     border-radius: 25px;
     width: 250px;
     height: 52px;
-    margin: 5%;
+    margin: 0;
     margin-right: 0;
     font-family: 'Montserrat', 'sans-serif';
     font-size: x-large;
     color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .mess-menu-but{
     background-color: #00AFF5; 
@@ -74,45 +74,54 @@ body{
     margin-left:10px;
 }
 
-.img-fluid{
-    width:200px;
-}
 
+/*-------------cards-----------------*/
+.row{
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .card {
+    /*float: left;*/
+    max-width: 33.333%;
+    padding: .75rem;
+    margin-bottom: 2rem;
+    border: 0;
+    flex-basis: 33.333%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    
+  }
+  .card:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
   
+  .card > img {
+    margin-bottom: .75rem;
+    width: 100%;
+  }
+  
+  .card-text {
+    font-size: 85%;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+}
+.card-text{
+    text-align: left;
+}
+.card-body{
+    text-align: center;
+}
+.card-img-top{
+    border-radius: 15px;
+}
   
 
   /*-----------------------------------------Menu-Page-----------------------------------------*/
   .price{
     color:grey;
-  }
-  .dropbtn{
-    background-color: aqua;
-    color: #00AFF5;
-  }
-  .heading3{
-    font-size: 3rem;
-    font-family: 'Montserrat', 'sans-serif';
-    margin-left:2%;
-  }
-  .this-heading{
-    margin-bottom:0;
-  }
-
-
-/*---------------------------------------about-page--------------------------------------------*/
-
-  .about-box{
-    text-align: center;
-    border : 0px solid black;
-    background-color: white;
-    border-radius:50px;
-    height:350px;
-    margin: 0 auto;
-    padding: 10px;
-    width: 500px;
-    padding-top:50px;
-    margin-bottom:0px;
-  }
-  .team-card{
-    border-radius: 20px;
   }
