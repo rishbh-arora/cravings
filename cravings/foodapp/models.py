@@ -53,7 +53,6 @@ class CustomUser(AbstractUser):
     gender = models.CharField(choices=gender, max_length=6, default="M")
     block = models.CharField(choices=blocks, max_length=12, default="MA")
 
-
 class menu(models.Model):
     block = models.CharField(choices=CustomUser.blocks, max_length=12, default="MA")
     item = models.CharField(max_length=50)
@@ -69,17 +68,10 @@ class order(models.Model):
     quantity = models.PositiveIntegerField()
     item = models.ForeignKey(menu, on_delete=models.CASCADE)
     book_time = models.DateTimeField(default = datetime.datetime.now())
-    exp_time = models.DateTimeField(default = datetime.datetime.now() + datetime.timedelta(minutes=25))
+    exp_time = models.DateTimeField(default = datetime.datetime.now() + datetime.timedelta(minutes=5))
     total = models.PositiveIntegerField()
-
-    def __str__(self):
-        return self.user.username
-
-class cart(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    quantity = models.PositiveIntegerField()
-    item = models.ForeignKey(menu, on_delete=models.CASCADE)
-    total = models.FloatField()
+    valid = models.BooleanField(default=(book_time < exp_time))
+    ready = models.BooleanField(default=False)
 
     def __str__(self):
         return self.user.username

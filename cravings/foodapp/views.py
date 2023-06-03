@@ -10,6 +10,9 @@ def messsignup(request):
 def profile(request):
     return render(request, "profile.html")
 
+def invoice(request):
+    return render(request, "invoice.html")
+
 def mess(request):
     return render(request, "ordertable.html")
 
