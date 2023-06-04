@@ -35,27 +35,27 @@
             <a class="nav-link" href="/profile"><i class="fa-solid fa-user fa-xl profile-img" href="/profile" style="color: #fff;background-color:#00AAF5;border-color:#00AAF5;"></i></a>
           </li>
           <li class="nav-link">
-            <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="home-page.html"><strong>Home</strong></a>
+            <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="/user_home"><strong>Home</strong></a>
           </li>             
           <li class="nav-link">
-            <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="menu.html"><strong>Menu</strong></a>
+            <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="/menu"><strong>Menu</strong></a>
           </li>
           <li class="nav-link">
-            <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="invoice.html"><strong>Invoice</strong></a>
+            <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="/invoice"><strong>Invoice</strong></a>
           </li>              
           <li class="nav-link">
-            <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="orderhistory.html"><strong>Order History</strong></a>
+            <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="#"><strong>Order History</strong></a>
           </li>              
           <li class="nav-link">
-            <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="about.html"><strong>About</strong></a>
+            <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="/about"><strong>About</strong></a>
           </li>              
           <li class="nav-link">
-            <a type="button" style="background-color:#00AAF5;border:none;font-size:large" class="btn btn-secondary" href="login.html"><strong>Logout</strong></a>
+            <a type="button" style="background-color:#00AAF5;border:none;font-size:large" class="btn btn-secondary" href="/logout"><strong>Logout</strong></a>
           </li>             
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> 
 
     <div class="table-page">
 
@@ -73,30 +73,31 @@
                 <th scope="col">Order Date</th>
                 <th scope="col">Items</th>
                 <th scope="col">Rate</th>
-                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">total</th>
               </tr>
             </thead>
             <tbody>
 
-              {% for no in token_nos %}
+              {% for order in history %}
               <tr>
                 <th scope="row">4 june, 2023</th>
                 <td>
                   <ul>
-                    <li>Masala Dosa</li>
-                    <li>Vada</li>
-                    <li>Kitkat</li>
+                    <li>{{order.item}}</li>
                   </ul>
                 </td>
                 <td>
                     <ul>
-                        <li>100</li>
-                        <li>50</li>
-                        <li>20</li>
+                        <li>{{order.item.rate}}</li>
                     </ul>
                 </td>
-                <td>170</td>
-                
+                <td>
+                  <ul>
+                      <li>{{order.quantity}}</li>
+                  </ul>
+              </td>
+                <td>{{order.total}}</td>
               </tr>
               {% endfor %}
             </tbody>

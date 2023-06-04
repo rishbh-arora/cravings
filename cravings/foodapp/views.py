@@ -9,7 +9,7 @@ def messsignup(request):
     return render(request, "messsignup.html")
 
 def profile(request):
-    return render(request, "profile.html")
+    return render(request, "user-pages/profile.html")
 
 def invoice(request):
     d = order.objects.all().values_list("total")
@@ -24,7 +24,7 @@ def mess_home(request):
         print(items)
     items = menu.objects.filter(block = request.user.block)
     print(items)
-    return render(request, "mess-menu.html", context = {"items": items})
+    return render(request, "mess-pages/mess-menu.html", context = {"items": items})
 
 def mess(request):
     if request.method == "POST":
@@ -37,7 +37,7 @@ def mess(request):
     
     else:
         orders = order.objects.filter(block = request.user.block, valid = True)
-        return render(request, "ordertable.html", context={"orders": orders})
+        return render(request, "mess-pages/ordertable.html", context={"orders": orders})
     
 def logout(request):
     auth.logout(request)
@@ -45,7 +45,8 @@ def logout(request):
 
 def showmenu(request):
     if request.method == "POST":
-        items = menu.objects.filter(block = request.user.block)
+        items = menu.objects.filter(block = request.user.block, is_available = True)
+        print(items)
         quantity = []
         for i in items:
             quantity.append(request.POST[str(i.id)])
@@ -65,14 +66,13 @@ def showmenu(request):
             total += i.total
 
         dic = {"orders": cur_orders, "total":total, "sub": total*0.075, "grand": total*1.075, "token":cur_token, "date_time": datetime.datetime.now().strftime("%d/%m/%Y \n %H:%M:%S")}
-        return render(request, "invoice.html", context=dic)
+        return render(request, "user-pages/invoice.html", context=dic)
 
     else:
-        print(request.user.block)
         veg = menu.objects.filter(block = request.user.block, cat = "Veg", is_available = True)
         nonveg = menu.objects.filter(block = request.user.block, cat = "Non veg", is_available = True)
         user_mess = CustomUser.objects.filter(user_type = "M", block = request.user.block)
-        return render(request, "menu/menu.html", {"veg": veg, "nonveg": nonveg, "mess": user_mess})
+        return render(request, "user-pages/menu.html", {"veg": veg, "nonveg": nonveg, "mess": user_mess})
 
 
 
@@ -87,7 +87,7 @@ def login(request):
             messages.info(request, f"Welcome, {user.username}")
             print (user.user_type)
             if user.user_type == "S":
-                return redirect("/menu")
+                return redirect("/user_home")
             else:
                 return redirect("/mess_home")
             
@@ -106,6 +106,9 @@ def login(request):
                 return redirect("/mess_home")
         else:
             return render(request, "login.html")
+        
+def user_home(request):
+    return render(request, "user-pages/home-page.html")
         
     
 def signup(request):
@@ -192,4 +195,15 @@ def add_item(request):
         item.save()
         return redirect("/mess_home")
     
-    return render(request, "additem.html")
+    return render(request, "mess-pages/additem.html")
+
+def about(request):
+    return render(request, "user-pages/about.html")
+
+def orderhistory(request):
+    history = order.objects.filter(user = request.user)
+    print(history)
+    return render(request, "user-pages/orderhistory.html", context={"history": history})
+
+def about_mess(request):
+    return render(request, "mess-pages/about-mess.html")

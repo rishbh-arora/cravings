@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+      {% load static %}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <title>food-app</title>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <link rel="stylesheet" href="/css/styles2.css">
+        <link rel="stylesheet" href="{% static 'styles2.css' %}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
@@ -28,22 +29,22 @@
                     <a class="nav-link" href="/profile"><i class="fa-solid fa-user fa-xl profile-img" href="/profile" style="color: #fff;background-color:#00AAF5;border-color:#00AAF5;"></i></a>
                   </li>
                   <li class="nav-link">
-                    <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="home-page.html"><strong>Home</strong></a>
+                    <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="/user_home"><strong>Home</strong></a>
                   </li>             
                   <li class="nav-link">
-                    <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="menu.html"><strong>Menu</strong></a>
+                    <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="/menu"><strong>Menu</strong></a>
                   </li>
                   <li class="nav-link">
-                    <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="invoice.html"><strong>Invoice</strong></a>
+                    <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="/invoice"><strong>Invoice</strong></a>
                   </li>              
                   <li class="nav-link">
-                    <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="orderhistory.html"><strong>Order History</strong></a>
+                    <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="/user_history"><strong>Order History</strong></a>
                   </li>              
                   <li class="nav-link">
-                    <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="../about.html"><strong>About</strong></a>
+                    <a type="button" style="background-color:#00AAF5;border:none;font-size:large;text-decoration:none;color:white" class="btn btn-secondary" href="#"><strong>About</strong></a>
                   </li>              
                   <li class="nav-link">
-                    <a type="button" style="background-color:#00AAF5;border:none;font-size:large" class="btn btn-secondary" href="login.html"><strong>Logout</strong></a>
+                    <a type="button" style="background-color:#00AAF5;border:none;font-size:large" class="btn btn-secondary" href="/logout"><strong>Logout</strong></a>
                   </li>             
                 </ul>
               </div>
