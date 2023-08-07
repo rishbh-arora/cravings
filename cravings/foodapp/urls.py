@@ -12,7 +12,7 @@ urlpatterns = [
     path("menu", views.showmenu),
     path("invoice", views.invoice),
     path("user_home", views.user_home),
-    path("about", views.about),
+    path("about/", views.about),
     path("user_history", views.orderhistory),
 
     path("mess_orders", views.pending_orders),

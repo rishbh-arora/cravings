@@ -26,18 +26,35 @@ def mess_home(request):
     print(items)
     return render(request, "mess-pages/mess-menu.html", context = {"items": items})
 
-def mess(request):
+def pending_orders(request):
+    if request.method == "POST":
+        token = request.POST['token1']
+        orders = order.objects.filter(token_no = token)
+        for i in orders:
+            i.ready = True
+            i.save()
+        return redirect("/mess_orders")
+    
+    else:
+        orders = order.objects.filter(block = request.user.block, valid = True, ready = False)
+        return render(request, "mess-pages/ordertable.html", context={"orders": orders, "title": "Pending Orders", "button":"Ready", "disabled": "", "action":"mess"})
+    
+def ready_orders(request):
     if request.method == "POST":
         token = request.POST['token1']
         orders = order.objects.filter(token_no = token)
         for i in orders:
             i.valid = False
             i.save()
-        return redirect("/mess")
+        return redirect("/ready_orders")
     
     else:
-        orders = order.objects.filter(block = request.user.block, valid = True)
-        return render(request, "mess-pages/ordertable.html", context={"orders": orders})
+        orders = order.objects.filter(block = request.user.block, valid = True, ready = True)
+        return render(request, "mess-pages/ordertable.html", context={"orders": orders, "title": "Ready Orders", "button": "Deliver","disabled": "", "action":"ready"})
+    
+def delivered_orders(request):
+    orders = order.objects.filter(block = request.user.block, valid = False)
+    return render(request, "mess-pages/ordertable.html", context={"orders": orders, "title": "Delivered Orders", "disabled": "disabled", "button":"delivered", "action":"delivered"})
     
 def logout(request):
     auth.logout(request)
@@ -201,7 +218,9 @@ def about(request):
     return render(request, "user-pages/about.html")
 
 def orderhistory(request):
-    history = order.objects.filter(user = request.user)
+    history = order.objects.filter(user = request.user).order_by("-id")[:20]
+    for i in history:
+        i.book_time = i.book_time.strftime("%d/%m/%Y \n %H:%M:%S")
     print(history)
     return render(request, "user-pages/orderhistory.html", context={"history": history})
 

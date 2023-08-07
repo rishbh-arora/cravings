@@ -37,7 +37,13 @@
             <a href="/mess_home">Home</a>
           </li>             
           <li class="nav-link">
-            <a href="#">Orders</a>
+            <a href="/mess_orders">Pending</a>
+          </li>
+          <li class="nav-link">
+            <a href="/ready_orders">Ready</a>
+          </li>
+          <li class="nav-link">
+            <a href="/delivered_orders">Delivered</a>
           </li>             
           <li class="nav-link">
             <a href="/about_mess">About</a>
@@ -56,7 +62,7 @@
 
     <div class="middle">    
 
-        <div class="title"><h2>Orders</h2></div>
+        <div class="title"><h2>{{title}}</h2></div>
 
         <div class="table-container">
 
@@ -75,7 +81,7 @@
             <tbody>
 
               {% for order in orders %}
-              <form method="post" action="/mess" onsubmit="myfunction({{order.id}})">
+              <form method="post" action="/{{action}}_orders" onsubmit="myfunction({{order.id}})">
                 {% csrf_token %}
               <tr>
                 <td><input type="number" value={{order.token_no}} id={{order.id}} min="{{order.token_no}}" max="{{order.token_no}}"></td>
@@ -94,7 +100,7 @@
                 <td>{{order.total}}</td>
                 <td>
                     <div class="form-check">
-                        <input type="submit" value="Ready">
+                        <input type="submit" value="{{button}}"  {{disabled}}>
                         <label class="form-check-label" for="flexCheckDefault">
                         </label>
                     </div>
