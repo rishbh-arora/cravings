@@ -6,16 +6,22 @@ urlpatterns = [
     path("login", views.login),
     path("signup", views.signup),
     path("profile", views.profile),
-    path("mess", views.mess),
-    path("menu", views.showmenu),
-    path("logout", views.logout),
-    path("invoice", views.invoice),
+    path("logout/", views.logout),
     path("messsignup", views.messsignup),
-    path("mess_home", views.mess_home),
-    path("mess_orders", views.mess),
-    path("add_item", views.add_item),
+    
+    path("menu", views.showmenu),
+    path("invoice", views.invoice),
     path("user_home", views.user_home),
     path("about", views.about),
     path("user_history", views.orderhistory),
+
+    path("mess_orders", views.pending_orders),
+    path("ready_orders", views.ready_orders),
+    path("delivered_orders", views.delivered_orders),
+    path("mess_home", views.mess_home),
+    path("add_item", views.add_item),
     path("about_mess", views.about_mess),
+
+    
+    
 ]
