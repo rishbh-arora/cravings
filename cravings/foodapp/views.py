@@ -21,7 +21,9 @@ def invoice(request):
 def mess_home(request):
     if request.method == "POST":
         items = request.POST.getlist("chk[]")
-        print(items)
+        items = [int(x) for x in items]
+        del_items = menu.objects.filter(pk__in = items)
+        del_items.delete()
     items = menu.objects.filter(block = request.user.block)
     print(items)
     return render(request, "mess-pages/mess-menu.html", context = {"items": items})
@@ -122,7 +124,8 @@ def login(request):
             else:
                 return redirect("/mess_home")
         else:
-            return render(request, "login.html")
+            return render(request, 
+                          "login.html")
         
 def user_home(request):
     return render(request, "user-pages/home-page.html")
